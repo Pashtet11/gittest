@@ -14,3 +14,5 @@ if d==1:
 
 if d==2:
     print ('Разность a-b=', a-b)
+
+print('Hello world')
