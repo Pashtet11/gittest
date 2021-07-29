@@ -41,9 +41,8 @@ def calc(example):
     print(arrExample)
 
     i = 0
-    result = 0
-
     while i < len(arrExample):
+        result = 0
         flag = False
         if arrExample[i] == '+':
             result += int(arrExample[i - 1]) + int(arrExample[i + 1])
@@ -52,15 +51,21 @@ def calc(example):
             result += int(arrExample[i - 1]) - int(arrExample[i + 1])
             flag = True
         if flag:
-            i += 2
+            print(i)
+            print(arrExample)
+            if i + 2 < len(arrExample):
+                arrExample = arrExample[:i - 1] + [result] + arrExample[i + 2:]
+            else:
+                arrExample = arrExample[:i - 1] + [result]
+            print(arrExample)
+            i -= 1
         i += 1
-
-    print(result)
+    print(arrExample)
 
 
 example1 = "10-5*3"
-example2 = "3+4*5"
-example3 = "1+2*6/4"
+example2 = "3+4*5-2"
+example3 = "1+2*6/4+3"
 
 calc(example1)
 print('/////////////////////////')
